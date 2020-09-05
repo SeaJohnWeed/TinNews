@@ -19,7 +19,6 @@ import java.util.List;
 
 public class SearchNewsAdapter extends RecyclerView.Adapter<SearchNewsAdapter.SearchNewsViewHolder> {
   // 1. Supporting data:
-  // TODO
   private List<Article> articles = new ArrayList<>();
   public void setArticles(List<Article> newList) {
     articles.clear();
@@ -27,6 +26,9 @@ public class SearchNewsAdapter extends RecyclerView.Adapter<SearchNewsAdapter.Se
     notifyDataSetChanged();
   }
 
+
+
+  // 2. Adapter overrides:
   @NonNull
   @Override
   public SearchNewsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -47,12 +49,7 @@ public class SearchNewsAdapter extends RecyclerView.Adapter<SearchNewsAdapter.Se
     return articles.size();
   }
 
-  // 2. Adapter overrides:
-  // TODO
-
-
   // 3. SearchNewsViewHolder:
-  // TODO
 
   public static class SearchNewsViewHolder extends RecyclerView.ViewHolder {
     ImageView favoriteImageView;

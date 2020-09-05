@@ -20,7 +20,6 @@ import java.util.List;
 
 public class CardSwipeAdapter extends RecyclerView.Adapter<CardSwipeAdapter.CardSwipeViewHolder> {
     // 1. Supporting data:
-    // TODO
     private List<Article> articles = new ArrayList<>();
 
     public void setArticles(List<Article> newsList) {
@@ -32,7 +31,6 @@ public class CardSwipeAdapter extends RecyclerView.Adapter<CardSwipeAdapter.Card
 
 
   // 2. Adapter overrides:
-    // TODO
   @NonNull
   @Override
   public CardSwipeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -54,8 +52,6 @@ public class CardSwipeAdapter extends RecyclerView.Adapter<CardSwipeAdapter.Card
   }
 
     // 3. CardSwipeViewHolder:
-    // TODO
-
   public static class CardSwipeViewHolder extends RecyclerView.ViewHolder {
 
     ImageView imageView;
