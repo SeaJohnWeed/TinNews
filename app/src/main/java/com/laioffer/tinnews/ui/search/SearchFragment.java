@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 
 import android.util.Log;
@@ -48,6 +49,10 @@ public class SearchFragment extends Fragment {
     binding.newsResultsRecyclerView.setLayoutManager(gridLayoutManager);
     binding.newsResultsRecyclerView.setAdapter(newsAdapter);
 
+    newsAdapter.setItemCallback(article -> {
+      SearchFragmentDirections.ActionNavigationSearchToNavigationDetails direction = SearchFragmentDirections.actionNavigationSearchToNavigationDetails(article);
+      NavHostFragment.findNavController(SearchFragment.this).navigate(direction);
+    });
 
     binding.newsSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
       @Override

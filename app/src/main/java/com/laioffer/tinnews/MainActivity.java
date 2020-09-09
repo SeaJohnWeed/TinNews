@@ -5,16 +5,11 @@ import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 import android.os.Bundle;
-import android.util.Log;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.laioffer.tinnews.model.NewsResponse;
 import com.laioffer.tinnews.network.NewsApi;
 import com.laioffer.tinnews.network.RetrofitClient;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
   private NavController navController;
@@ -28,7 +23,8 @@ public class MainActivity extends AppCompatActivity {
             .findFragmentById(R.id.nav_host_fragment);
     navController = navHostFragment.getNavController();
     NavigationUI.setupWithNavController(navView, navController);
-    NavigationUI.setupActionBarWithNavController(this, navController);
+    NewsApi api = RetrofitClient.newInstance(this).create(NewsApi.class);
+
   }
 
   @Override
